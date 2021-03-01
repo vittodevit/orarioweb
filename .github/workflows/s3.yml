@@ -12,9 +12,6 @@ jobs:
         - name: Install dependencies
           run: yarn
 
-        - name: Build
-          run: yarn build
-
         - name: Deploy
           uses: reggionick/s3-deploy@v3
           with:
