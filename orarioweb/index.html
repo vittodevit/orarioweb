@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>OrarioVideolezioni WEB</title>
+    <link rel="icon" href="../favicon.png">
+    <link rel="shortcut icon" href="../favicon.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link href="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.min.css" rel="stylesheet" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="../orarioweb.css" rel="stylesheet">
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <!-- HEADER -->
+    <header>
+        <div class="collapse bg-dark" id="navbarHeader">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-8 col-md-7 py-4">
+                        <h4 class="text-white"><i class="bi bi-info-circle"></i> Informazioni</h4>
+                        <p class="text-muted">OrarioVideolezioni in una nuova veste moderna completamente web-based! Al
+                            momento è supportato solo il caricamento read-only, ma tutto ciò cambierà presto ;)</p>
+                    </div>
+                    <div class="col-sm-4 offset-md-1 py-4">
+                        <h4 class="text-white">Sviluppato da:</h4>
+                        <ul class="list-unstyled">
+                            <li class="text-white"> <i class="bi bi-person"></i> Vittorio Lo Mele</li>
+                            <li><a href="https://mrbackslash.it" class="text-white">Portfolio personale</a></li>
+                            <li><a href="https://github.com/mrBackSlash-it" class="text-white">GitHub</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="navbar navbar-dark bg-dark shadow-sm">
+            <div class="row w-100 clearfix">
+                <div class="col padleft float-left">
+                    <a href="../" class="navbar-brand d-flex align-items-center">
+                        <img src="../tblogo.png" alt="logo">
+                        <span class="hspacer1"></span>
+                        <strong>OrarioVideolezioni WEB</strong>
+                    </a>
+                </div>
+                <div class="col col-md-auto float-right">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader"
+                    aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- MAIN -->
+    <main class="mainwindow">
+        <!-- Controlli -->
+        <div class="container controlli">
+            <div class="row">
+                <div class="col col-md-auto" style="padding-right: 5px;">
+                    <button type="button" id="btn-apri" class="btn btn-primary"><i class="bi bi-link-45deg"></i> Apri link attivo</button>
+                </div>
+                <div class="col col-md-auto" style="padding-left: 5px;">
+                    <button type="button" id="btn-aggiorna" class="btn btn-primary"><i class="bi bi-arrow-repeat"></i> Aggiorna orario</button>
+                </div>
+                <div class="col col-md-auto d-flex align-items-center">
+                    <div class="form-check ">
+                        <input class="form-check-input" type="checkbox" value="" id="autoStartCheckb">
+                        <label class="form-check-label" for="autoStartCheckb">
+                          Apri link in automatico
+                        </label>
+                      </div>
+                </div>
+                <div class="col d-flex align-items-center">
+                    <div id="linkattivo"></div>
+                </div>
+            </div>
+        </div>
+        <!-- Tabella -->
+        <table id="tabellaorario" class="table table-striped table-bordered">
+            <thead>
+                <tr>
+                    <td>Active</td>
+                    <td>Id</td>
+                    <td>Giorno</td>
+                    <td>Ora di inizio</td>
+                    <td>Ora di fine</td>
+                    <td>Materia</td>
+                    <td>Link</td>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+    </main>
+    <!-- JAVASCRIPT -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js" crossorigin="anonymous"></script>
+    <script src="orarioweb.js"></script>
+</body>
+
+</html>
