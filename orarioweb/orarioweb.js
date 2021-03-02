@@ -4,7 +4,7 @@ Vittorio Lo Mele, Giovedì 25 Febbraio 2021
 */
 
 var globJson;
-var lastLink;
+var lastId;
 var cycleLock;
 
 //init tabella datatable
@@ -63,9 +63,9 @@ function nowsec() {
     return hourstosec + mintosec + date.getSeconds();
 }
 
-function launchLink(link) {
-    if (link != lastLink && window.localStorage.getItem('autostart')) {
-        lastLink = link;
+function launchLink(link, lid) {
+    if (lid != lastId && window.localStorage.getItem('autostart')) {
+        lastId = lid;
         var tab = window.open(link, '_blank');
         tab.focus();
     }
@@ -103,14 +103,15 @@ function linkifyMat(link, materia) {
 //build tabella da array json
 function buildTable(jsonData) {
     dt.clear();
+    cycleLock = false; //reset lock
     jsonData.forEach(jelement => {
         secs = nowsec();
         today = new Date();
         if (today.getDay() == jelement.GiornoSettimana && jelement.IntervalloInizio < secs && jelement.IntervalloFine > secs) {
             buildTableRow(jelement, true);
-            cycleLock = true;
+            cycleLock = true; //blocca il reset del link attivo
             $("#linkattivo").html(linkifyMat(jelement.Link, jelement.Materia));
-            launchLink(jelement.Link);
+            launchLink(jelement.Link, jelement.Id);
 
         } else {
             buildTableRow(jelement, false);
