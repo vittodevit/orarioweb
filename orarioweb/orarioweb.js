@@ -184,7 +184,7 @@ var getUrlParameter = function getUrlParameter(sParam) {
 function orarioAjax() {
     $.ajax({
         type: "GET",
-        url: "https://mrbackslash.it/api-orario/get.php?codice=" + getUrlParameter("c")
+        url: "https://mrbackslash.it/cdn/orarioweb/" + getUrlParameter("c") + ".json"
     }).done(function (jsonResult) {
         //orario letto
         if(jsonResult.success){
